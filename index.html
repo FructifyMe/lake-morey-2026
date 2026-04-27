@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lake Morey 2026 — A Charity Golf Weekend for Melanoma Foundation of New England</title>
+<meta name="description" content="A fall 2026 charity golf weekend at Lake Morey Resort in Fairlee, Vermont — retired police, fire, EMS, and veterans raising funds for the Melanoma Foundation of New England.">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Lake Morey 2026 — Charity Golf Weekend">
+<meta property="og:description" content="Three nights, 63 holes, fall foliage in Vermont. Raising funds for the Melanoma Foundation of New England.">
+<meta property="og:type" content="website">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --forest: #14532d;
+    --forest-dark: #052e16;
+    --forest-light: #166534;
+    --autumn: #b45309;
+    --autumn-light: #ea580c;
+    --gold: #ca8a04;
+    --cream: #fefbf3;
+    --cream-2: #fef3c7;
+    --paper: #faf7f0;
+    --ink: #1c1917;
+    --ink-soft: #44403c;
+    --line: #e7e5e4;
+    --white: #ffffff;
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.04);
+    --shadow: 0 4px 12px -2px rgb(20 83 45 / 0.08);
+    --shadow-lg: 0 20px 40px -12px rgb(20 83 45 / 0.18);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 600;
+    color: var(--forest-dark);
+    letter-spacing: -0.01em;
+  }
+
+  a { color: var(--forest); text-decoration: none; transition: color .2s; }
+  a:hover { color: var(--autumn-light); }
+
+  /* === LAYOUT === */
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  section { padding: 80px 0; }
+  @media (max-width: 720px) { section { padding: 56px 0; } }
+
+  /* === NAV === */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(254, 251, 243, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    max-width: 1200px; margin: 0 auto; padding: 16px 24px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-weight: 700;
+    color: var(--forest-dark);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .nav-brand .flag { color: var(--autumn-light); font-size: 26px; }
+  .nav-links { display: flex; gap: 28px; font-size: 14px; font-weight: 500; }
+  .nav-links a { color: var(--ink-soft); }
+  .nav-links a:hover { color: var(--forest); }
+  @media (max-width: 720px) { .nav-links { display: none; } }
+
+  /* === HERO === */
+  .hero {
+    position: relative;
+    min-height: 92vh;
+    display: flex; align-items: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, #052e16 0%, #14532d 45%, #15803d 100%);
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(circle at 18% 80%, rgba(234, 88, 12, 0.32) 0%, transparent 45%),
+      radial-gradient(circle at 80% 20%, rgba(202, 138, 4, 0.28) 0%, transparent 50%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpath fill='none' stroke='%23ffffff' stroke-width='0.5' opacity='0.08' d='M0 60 Q30 30 60 60 T120 60 M0 80 Q30 50 60 80 T120 80 M0 40 Q30 10 60 40 T120 40'/%3E%3C/svg%3E");
+  }
+  .hero::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0; height: 100px;
+    background: linear-gradient(to bottom, transparent, var(--paper));
+  }
+  .hero-content {
+    position: relative; z-index: 2;
+    max-width: 1200px; margin: 0 auto; padding: 80px 24px;
+    color: var(--cream);
+  }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 12px; font-weight: 600; letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cream-2);
+    background: rgba(202, 138, 4, 0.18);
+    border: 1px solid rgba(202, 138, 4, 0.4);
+    padding: 8px 16px; border-radius: 100px;
+    margin-bottom: 28px;
+  }
+  .eyebrow .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--autumn-light);
+    box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.25);
+    animation: pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.25); }
+    50% { box-shadow: 0 0 0 6px rgba(234, 88, 12, 0.05); }
+  }
+  .hero h1 {
+    font-size: clamp(48px, 8vw, 96px);
+    line-height: 1.02;
+    color: var(--cream);
+    margin-bottom: 24px;
+    font-weight: 600;
+  }
+  .hero h1 em {
+    color: var(--autumn-light);
+    font-style: italic;
+  }
+  .hero-tagline {
+    font-size: clamp(18px, 2.2vw, 22px);
+    color: rgba(254, 243, 199, 0.88);
+    max-width: 620px;
+    margin-bottom: 40px;
+    font-weight: 400;
+  }
+  .hero-meta {
+    display: flex; flex-wrap: wrap; gap: 12px 32px;
+    margin-bottom: 44px;
+    font-size: 14px;
+    color: rgba(254, 243, 199, 0.75);
+  }
+  .hero-meta span { display: flex; align-items: center; gap: 8px; }
+  .hero-cta { display: flex; flex-wrap: wrap; gap: 14px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 16px 28px;
+    font-size: 15px; font-weight: 600;
+    border-radius: 999px;
+    transition: all .2s ease;
+    cursor: pointer;
+    border: none;
+  }
+  .btn-primary {
+    background: var(--autumn-light);
+    color: var(--white);
+    box-shadow: 0 6px 20px -4px rgba(234, 88, 12, 0.5);
+  }
+  .btn-primary:hover {
+    background: #c2410c;
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px -4px rgba(234, 88, 12, 0.55);
+  }
+  .btn-ghost {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--cream);
+    border: 1px solid rgba(254, 243, 199, 0.3);
+  }
+  .btn-ghost:hover { background: rgba(255, 255, 255, 0.16); color: var(--white); }
+
+  /* === STATS BAR === */
+  .stats {
+    margin-top: -64px; position: relative; z-index: 5;
+    padding-bottom: 0;
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    background: var(--white);
+    padding: 32px;
+    border-radius: 18px;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--line);
+  }
+  .stat { text-align: center; padding: 8px; }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 44px; font-weight: 700;
+    color: var(--forest-dark);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .stat-label {
+    font-size: 12px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--ink-soft);
+  }
+  .stat-sub { font-size: 13px; color: var(--ink-soft); margin-top: 4px; }
+  @media (max-width: 720px) {
+    .stats-grid { grid-template-columns: repeat(2, 1fr); padding: 20px; }
+    .stat-num { font-size: 32px; }
+  }
+
+  /* === SECTION HEADING === */
+  .sec-head { text-align: center; max-width: 720px; margin: 0 auto 56px; }
+  .sec-eyebrow {
+    font-size: 12px; font-weight: 700;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--autumn);
+    margin-bottom: 12px;
+  }
+  .sec-head h2 {
+    font-size: clamp(34px, 5vw, 52px);
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+  .sec-head p { color: var(--ink-soft); font-size: 17px; }
+
+  /* === ABOUT === */
+  .about { background: var(--cream); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 64px;
+    align-items: start;
+  }
+  @media (max-width: 880px) {
+    .about-grid { grid-template-columns: 1fr; gap: 32px; }
+  }
+  .about-prose p {
+    font-size: 17px;
+    color: var(--ink-soft);
+    margin-bottom: 18px;
+  }
+  .about-prose strong { color: var(--forest-dark); }
+  .badges {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    margin-top: 24px;
+  }
+  .badge {
+    background: var(--white);
+    border: 1px solid var(--line);
+    color: var(--forest-dark);
+    padding: 6px 14px;
+    border-radius: 100px;
+    font-size: 13px; font-weight: 500;
+  }
+  .about-card {
+    background: var(--forest-dark);
+    color: var(--cream);
+    padding: 36px;
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+  }
+  .about-card::before {
+    content: '🍂';
+    position: absolute; top: -20px; right: -10px;
+    font-size: 140px; opacity: 0.07;
+  }
+  .about-card h3 {
+    color: var(--cream);
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  .format-list { list-style: none; }
+  .format-list li {
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(254, 243, 199, 0.12);
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 15px;
+  }
+  .format-list li:last-child { border-bottom: none; }
+  .format-list .day { font-weight: 600; color: var(--cream); }
+  .format-list .what { color: rgba(254, 243, 199, 0.7); font-size: 14px; }
+
+  /* === DATES === */
+  .dates-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  @media (max-width: 980px) { .dates-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 540px) { .dates-grid { grid-template-columns: 1fr; } }
+  .date-card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 28px 22px;
+    transition: all .25s;
+    position: relative;
+  }
+  .date-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+    border-color: var(--forest-light);
+  }
+  .date-card.recommended {
+    border: 2px solid var(--autumn-light);
+    background: linear-gradient(180deg, #fff7ed 0%, #ffffff 60%);
+  }
+  .date-tag {
+    position: absolute; top: -12px; right: 16px;
+    background: var(--autumn-light); color: var(--white);
+    font-size: 11px; font-weight: 700;
+    padding: 5px 10px; border-radius: 100px;
+    letter-spacing: 0.06em; text-transform: uppercase;
+  }
+  .date-week { font-size: 12px; font-weight: 600; color: var(--ink-soft); letter-spacing: 0.08em; text-transform: uppercase; }
+  .date-card h3 { font-size: 22px; margin: 8px 0 4px; line-height: 1.2; }
+  .date-meta { font-size: 13px; color: var(--ink-soft); margin-bottom: 18px; }
+  .date-row { display: flex; justify-content: space-between; padding: 6px 0; font-size: 13px; }
+  .date-row:not(:last-child) { border-bottom: 1px dashed var(--line); }
+  .date-row span:first-child { color: var(--ink-soft); }
+  .date-row span:last-child { font-weight: 600; color: var(--forest-dark); }
+
+  /* === PROGRESS === */
+  .progress { background: var(--cream); }
+  .stepper {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    position: relative;
+    margin-bottom: 32px;
+  }
+  .stepper::before {
+    content: '';
+    position: absolute; top: 28px; left: 10%; right: 10%; height: 3px;
+    background: var(--line);
+    z-index: 0;
+  }
+  .step { text-align: center; position: relative; z-index: 1; padding: 0 8px; }
+  .step-circle {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 3px solid var(--line);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-weight: 700;
+    color: var(--ink-soft);
+    margin: 0 auto 14px;
+    transition: all .3s;
+  }
+  .step.done .step-circle {
+    background: var(--forest);
+    border-color: var(--forest);
+    color: var(--cream);
+  }
+  .step.current .step-circle {
+    background: var(--autumn-light);
+    border-color: var(--autumn-light);
+    color: var(--white);
+    box-shadow: 0 0 0 6px rgba(234, 88, 12, 0.18);
+  }
+  .step-name { font-size: 13px; font-weight: 600; color: var(--forest-dark); margin-bottom: 4px; }
+  .step-sub { font-size: 12px; color: var(--ink-soft); }
+  @media (max-width: 720px) {
+    .stepper { grid-template-columns: 1fr; gap: 0; }
+    .stepper::before { display: none; }
+    .step { display: flex; align-items: center; gap: 16px; text-align: left; padding: 12px 0; border-bottom: 1px solid var(--line); }
+    .step-circle { margin: 0; }
+  }
+  .progress-detail {
+    background: var(--white);
+    border-radius: 14px;
+    padding: 32px;
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow-sm);
+  }
+  .progress-detail h3 { font-size: 24px; margin-bottom: 14px; }
+  .progress-detail .what-now {
+    background: #fef3c7;
+    border-left: 4px solid var(--autumn-light);
+    padding: 16px 20px;
+    border-radius: 6px;
+    margin: 18px 0;
+    font-size: 15px;
+  }
+  .checklist { list-style: none; padding: 0; }
+  .checklist li { padding: 8px 0; font-size: 15px; color: var(--ink-soft); }
+  .checklist li::before {
+    content: '○ ';
+    color: var(--autumn-light); font-weight: 700;
+    margin-right: 6px;
+  }
+  .checklist li.done { color: var(--forest-dark); text-decoration: line-through; opacity: 0.6; }
+  .checklist li.done::before { content: '● '; }
+
+  /* === CHARITY === */
+  .charity {
+    background: linear-gradient(135deg, var(--forest-dark) 0%, #14532d 100%);
+    color: var(--cream);
+    position: relative;
+    overflow: hidden;
+  }
+  .charity::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cpath fill='none' stroke='%23fef3c7' stroke-width='0.4' opacity='0.06' d='M100 0 L100 200 M0 100 L200 100 M50 50 L150 150 M150 50 L50 150'/%3E%3Ccircle cx='100' cy='100' r='80' fill='none' stroke='%23fef3c7' stroke-width='0.4' opacity='0.06'/%3E%3C/svg%3E");
+  }
+  .charity .sec-head h2 { color: var(--cream); }
+  .charity .sec-eyebrow { color: var(--autumn-light); }
+  .charity .sec-head p { color: rgba(254, 243, 199, 0.78); }
+  .charity-content { position: relative; z-index: 1; }
+  .charity-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: center;
+  }
+  @media (max-width: 880px) { .charity-grid { grid-template-columns: 1fr; gap: 32px; } }
+  .charity-text p {
+    color: rgba(254, 243, 199, 0.85);
+    font-size: 17px;
+    margin-bottom: 18px;
+  }
+  .charity-text strong { color: var(--cream); }
+  .charity-progress {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(254, 243, 199, 0.16);
+    border-radius: 16px;
+    padding: 36px;
+    backdrop-filter: blur(8px);
+  }
+  .charity-progress h3 { color: var(--cream); font-size: 22px; margin-bottom: 8px; }
+  .raise-amount {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 56px; font-weight: 700;
+    color: var(--autumn-light);
+    line-height: 1;
+    margin: 16px 0 4px;
+  }
+  .raise-goal { color: rgba(254, 243, 199, 0.6); font-size: 14px; }
+  .raise-bar {
+    height: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 100px;
+    margin: 24px 0 12px;
+    overflow: hidden;
+  }
+  .raise-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--autumn) 0%, var(--gold) 100%);
+    border-radius: 100px;
+    transition: width 1.5s ease;
+  }
+  .charity-asks {
+    list-style: none; margin-top: 24px;
+  }
+  .charity-asks li {
+    padding: 10px 0;
+    color: rgba(254, 243, 199, 0.85);
+    font-size: 14px;
+    border-bottom: 1px solid rgba(254, 243, 199, 0.08);
+  }
+  .charity-asks li::before {
+    content: '✦ ';
+    color: var(--autumn-light);
+    margin-right: 6px;
+  }
+
+  /* === CREW === */
+  .crew { background: var(--paper); }
+  .crew-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  @media (max-width: 720px) { .crew-grid { grid-template-columns: 1fr; } }
+  .crew-card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 32px;
+    text-align: center;
+    transition: transform .2s;
+  }
+  .crew-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+  .crew-avatar {
+    width: 84px; height: 84px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--forest) 0%, var(--forest-light) 100%);
+    color: var(--cream);
+    margin: 0 auto 16px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px; font-weight: 700;
+  }
+  .crew-card h3 { font-size: 22px; margin-bottom: 4px; }
+  .crew-card .role {
+    font-size: 12px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.12em;
+    color: var(--autumn);
+    margin-bottom: 14px;
+  }
+  .crew-card p { font-size: 14px; color: var(--ink-soft); }
+
+  /* === CTA === */
+  .cta-section {
+    background: var(--paper);
+    text-align: center;
+  }
+  .cta-card {
+    background: linear-gradient(135deg, var(--autumn) 0%, #c2410c 100%);
+    color: var(--white);
+    padding: 64px 32px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-card::before {
+    content: '⛳';
+    position: absolute;
+    font-size: 240px;
+    opacity: 0.06;
+    top: -40px; right: -20px;
+  }
+  .cta-card h2 {
+    color: var(--white);
+    font-size: clamp(34px, 5vw, 48px);
+    margin-bottom: 16px;
+  }
+  .cta-card p {
+    color: rgba(254, 243, 199, 0.95);
+    font-size: 18px;
+    max-width: 540px;
+    margin: 0 auto 32px;
+  }
+  .cta-card .btn-primary {
+    background: var(--white);
+    color: var(--autumn);
+  }
+  .cta-card .btn-primary:hover { background: var(--cream); color: var(--autumn); }
+
+  /* === FOOTER === */
+  footer {
+    background: var(--forest-dark);
+    color: rgba(254, 243, 199, 0.7);
+    padding: 56px 0 32px;
+    font-size: 14px;
+  }
+  .foot-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+  @media (max-width: 720px) { .foot-grid { grid-template-columns: 1fr; gap: 24px; } }
+  footer h4 { color: var(--cream); margin-bottom: 14px; font-size: 16px; }
+  footer a { color: rgba(254, 243, 199, 0.7); display: block; padding: 4px 0; }
+  footer a:hover { color: var(--autumn-light); }
+  .foot-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; color: var(--cream); margin-bottom: 12px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .foot-bottom {
+    padding-top: 24px;
+    border-top: 1px solid rgba(254, 243, 199, 0.12);
+    text-align: center;
+    font-size: 12px;
+    color: rgba(254, 243, 199, 0.5);
+  }
+</style>
+</head>
+<body>
+
+<!-- ============== NAV ============== -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-brand"><span class="flag">⛳</span>Lake Morey 2026</div>
+    <div class="nav-links">
+      <a href="#about">The Trip</a>
+      <a href="#dates">Dates</a>
+      <a href="#progress">Progress</a>
+      <a href="#charity">Charity</a>
+      <a href="#crew">Crew</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============== HERO ============== -->
+<header class="hero">
+  <div class="hero-content">
+    <span class="eyebrow"><span class="dot"></span> A Charity Golf Weekend &nbsp;·&nbsp; Fall 2026</span>
+    <h1>Three nights.<br>Sixty-three holes.<br>One <em>good cause.</em></h1>
+    <p class="hero-tagline">
+      A weekend at Lake Morey Resort in Fairlee, Vermont — for retired police, firefighters, EMS, and military veterans — raising funds for the Melanoma Foundation of New England.
+    </p>
+    <div class="hero-meta">
+      <span>📍 Lake Morey Resort, Fairlee, VT</span>
+      <span>📅 Sep 25 – 27, 2026 (target)</span>
+      <span>🏌️ 12–16 golfers</span>
+    </div>
+    <div class="hero-cta">
+      <a href="#interest" class="btn btn-primary">Count Me In →</a>
+      <a href="#about" class="btn btn-ghost">Learn More</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============== STATS ============== -->
+<section class="stats wrap">
+  <div class="stats-grid">
+    <div class="stat">
+      <div class="stat-num" id="countdown">—</div>
+      <div class="stat-label">Days to Tee Off</div>
+      <div class="stat-sub">Target: Sep 25, 2026</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">3 / 16</div>
+      <div class="stat-label">Golfers Committed</div>
+      <div class="stat-sub">Mike, Bob, Jim — and counting</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">$0</div>
+      <div class="stat-label">Raised for MFNE</div>
+      <div class="stat-sub">Goal: $5,000</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">⏳</div>
+      <div class="stat-label">Quote Status</div>
+      <div class="stat-sub">Inquiry sent to Lake Morey</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== ABOUT ============== -->
+<section id="about" class="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-eyebrow">The Trip</div>
+      <h2>A weekend that's worth the drive.</h2>
+      <p>This isn't a brand-new idea. We've done this trip before. The format works. What's new this year is the cause we're playing for.</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-prose">
+        <p>Lake Morey is a third-generation family-owned resort in Vermont's Connecticut River Upper Valley — easy I-91 access, a championship 18-hole course with a flat front nine and a mountainous back, lake views, and the kind of fall foliage you write home about.</p>
+        <p>Our group is mostly <strong>retired firefighters, with police, EMS, and veterans rounding it out</strong> — most of us in our 50s and 60s, all of us still chasing a little white ball around. We come up Friday afternoon, play a quick nine, sleep, play 36 on Saturday, sleep, play 18 Sunday, then drive home tired and happy.</p>
+        <p>This year we're tying the trip to a <strong>fundraiser for the Melanoma Foundation of New England</strong>. The cause hits close to home — outdoor service members and firefighters carry elevated cancer risk, and our age cohort sees plenty of skin-cancer scares. Plus, it's a New England organization for a New England trip. That just feels right.</p>
+        <div class="badges">
+          <span class="badge">🚒 Retired Fire</span>
+          <span class="badge">👮 Retired Police</span>
+          <span class="badge">🚑 Retired EMS</span>
+          <span class="badge">🎖️ Veterans</span>
+          <span class="badge">🏌️ Drive-in from New England</span>
+        </div>
+      </div>
+      <div class="about-card">
+        <h3>The Format</h3>
+        <ul class="format-list">
+          <li>
+            <div><div class="day">Friday PM</div><div class="what">Arrive, get loose</div></div>
+            <strong>9 holes</strong>
+          </li>
+          <li>
+            <div><div class="day">Saturday AM</div><div class="what">Shotgun preferred</div></div>
+            <strong>18 holes</strong>
+          </li>
+          <li>
+            <div><div class="day">Saturday PM</div><div class="what">Replay or full round</div></div>
+            <strong>18 holes</strong>
+          </li>
+          <li>
+            <div><div class="day">Sunday AM</div><div class="what">Before departure</div></div>
+            <strong>18 holes</strong>
+          </li>
+          <li>
+            <div><div class="day">All weekend</div><div class="what">2 dinners + 2 breakfasts</div></div>
+            <strong>+ meals</strong>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== DATES ============== -->
+<section id="dates">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-eyebrow">Date Finalists</div>
+      <h2>Four candidate weekends.</h2>
+      <p>Mid-September to second week of October. Each weekend has its own tradeoff between price, foliage, and weather. Our recommended target is Sep 25–27, with Oct 2–4 as the foliage-premium alternate.</p>
+    </div>
+    <div class="dates-grid">
+      <!-- W1 -->
+      <div class="date-card">
+        <div class="date-week">Weekend 1</div>
+        <h3>Sep 18 – 20</h3>
+        <div class="date-meta">Late summer • Lowest demand</div>
+        <div class="date-row"><span>Foliage</span><span>Just starting</span></div>
+        <div class="date-row"><span>Weather</span><span>65–72°F</span></div>
+        <div class="date-row"><span>Pricing</span><span>Lowest</span></div>
+        <div class="date-row"><span>Vibe</span><span>Warm & calm</span></div>
+      </div>
+      <!-- W2 RECOMMENDED -->
+      <div class="date-card recommended">
+        <div class="date-tag">Recommended</div>
+        <div class="date-week">Weekend 2</div>
+        <h3>Sep 25 – 27</h3>
+        <div class="date-meta">Early color • Best balance</div>
+        <div class="date-row"><span>Foliage</span><span>~25–40% turn</span></div>
+        <div class="date-row"><span>Weather</span><span>60–68°F</span></div>
+        <div class="date-row"><span>Pricing</span><span>Shoulder</span></div>
+        <div class="date-row"><span>Vibe</span><span>Sweet spot</span></div>
+      </div>
+      <!-- W3 -->
+      <div class="date-card">
+        <div class="date-week">Weekend 3</div>
+        <h3>Oct 2 – 4</h3>
+        <div class="date-meta">Peak foliage • Books first</div>
+        <div class="date-row"><span>Foliage</span><span>Near peak</span></div>
+        <div class="date-row"><span>Weather</span><span>55–65°F</span></div>
+        <div class="date-row"><span>Pricing</span><span>Highest</span></div>
+        <div class="date-row"><span>Vibe</span><span>Postcard fall</span></div>
+      </div>
+      <!-- W4 -->
+      <div class="date-card">
+        <div class="date-week">Weekend 4</div>
+        <h3>Oct 9 – 11</h3>
+        <div class="date-meta">Past peak • Frost risk</div>
+        <div class="date-row"><span>Foliage</span><span>Peak to past</span></div>
+        <div class="date-row"><span>Weather</span><span>50–60°F</span></div>
+        <div class="date-row"><span>Pricing</span><span>Easing</span></div>
+        <div class="date-row"><span>Vibe</span><span>Late & cold</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== PROGRESS ============== -->
+<section id="progress" class="progress">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-eyebrow">Where We Are</div>
+      <h2>Project status.</h2>
+      <p>This thing isn't going to plan itself. Here's where we are and what's next.</p>
+    </div>
+
+    <div class="stepper">
+      <div class="step done">
+        <div class="step-circle">1</div>
+        <div class="step-name">Discovery</div>
+        <div class="step-sub">Research complete</div>
+      </div>
+      <div class="step current">
+        <div class="step-circle">2</div>
+        <div class="step-name">Quote &amp; Group</div>
+        <div class="step-sub">Quote sent — recruiting</div>
+      </div>
+      <div class="step">
+        <div class="step-circle">3</div>
+        <div class="step-name">Booking</div>
+        <div class="step-sub">Deposit + lock</div>
+      </div>
+      <div class="step">
+        <div class="step-circle">4</div>
+        <div class="step-name">Logistics</div>
+        <div class="step-sub">Tee times + pairings</div>
+      </div>
+      <div class="step">
+        <div class="step-circle">5</div>
+        <div class="step-name">Tee Off</div>
+        <div class="step-sub">September 2026</div>
+      </div>
+    </div>
+
+    <div class="progress-detail">
+      <h3>What's happening right now</h3>
+      <div class="what-now">
+        <strong>Quote inquiry sent to Lake Morey</strong> on April 27, 2026 — including our format, date finalists, group identity (police/fire/EMS/vets), and a charity-partnership ask for MFNE. Expecting a reply within 5–7 business days.
+      </div>
+      <ul class="checklist">
+        <li class="done">Project parameters locked (group size, format, dates window)</li>
+        <li class="done">Lake Morey research complete — pricing structure documented</li>
+        <li class="done">Date analysis done — Sep 25–27 recommended, Oct 2–4 alternate</li>
+        <li class="done">Charity locked — Melanoma Foundation of New England</li>
+        <li class="done">Outreach drafted with hero/AARP/AAA discount asks + charity partnership angle</li>
+        <li>Send quote inquiry to Lake Morey group sales</li>
+        <li>Receive and review quote — populate package comparison</li>
+        <li>Pick finalist date(s) — vote with the group</li>
+        <li>Confirm 12–16 golfer roster</li>
+        <li>Submit deposit and lock the trip</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============== CHARITY ============== -->
+<section id="charity" class="charity">
+  <div class="charity-content wrap">
+    <div class="sec-head">
+      <div class="sec-eyebrow">The Cause</div>
+      <h2>Playing for a reason.</h2>
+      <p>Every dollar raised goes to the Melanoma Foundation of New England.</p>
+    </div>
+    <div class="charity-grid">
+      <div class="charity-text">
+        <p><strong>Why melanoma. Why MFNE.</strong></p>
+        <p>Outdoor service members and firefighters live with elevated cancer risk. Years on a fire line, in a cruiser, on a rig, in a uniform — sun exposure, smoke exposure, the works. Our age cohort knows somebody, often a few somebodies, who's been through it.</p>
+        <p>The <strong>Melanoma Foundation of New England</strong> is a regional non-profit (501(c)(3)) focused on prevention, education, and support across New England — the same six states most of us call home. They run the &ldquo;Practice Safe Skin&rdquo; program, fund research, and support patients and families through treatment.</p>
+        <p>Our goal for this trip: <strong>raise $5,000</strong>. With 16 golfers committing $250 each (or 20 at $250, or fewer at more) — totally doable. Add a side game with proceeds to the cause. Add a Lake Morey match if we can negotiate one. Add anyone outside the group who wants to chip in via the dashboard.</p>
+        <p style="margin-top: 24px;"><a href="https://www.mfne.org" target="_blank" rel="noopener" style="color: var(--autumn-light); font-weight: 600;">Learn more about MFNE →</a></p>
+      </div>
+      <div class="charity-progress">
+        <h3>Trip raise tracker</h3>
+        <p style="color: rgba(254, 243, 199, 0.7); font-size: 14px;">Live count of what we've raised so far</p>
+        <div class="raise-amount">$0</div>
+        <div class="raise-goal">of $5,000 goal</div>
+        <div class="raise-bar"><div class="raise-fill" style="width: 0%;"></div></div>
+        <div style="font-size: 13px; color: rgba(254, 243, 199, 0.6);">0% to goal</div>
+        <ul class="charity-asks" style="margin-top: 28px;">
+          <li>Per-golfer pledge above the trip cost ($250+ suggested)</li>
+          <li>Saturday side games with proceeds to MFNE</li>
+          <li>Outside donations (family, friends, network)</li>
+          <li>Resort partner match (in negotiation)</li>
+          <li>Closest-to-the-pin / longest-drive contests</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== CREW ============== -->
+<section id="crew" class="crew">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-eyebrow">The Planning Crew</div>
+      <h2>The guys actually pulling this off.</h2>
+      <p>Reach out to any of us with questions, interest, or to commit. The dashboard is our shared source of truth.</p>
+    </div>
+    <div class="crew-grid">
+      <div class="crew-card">
+        <div class="crew-avatar">M</div>
+        <h3>Mike</h3>
+        <div class="role">Trip Lead · Outreach</div>
+        <p>Running point on Lake Morey, quote, and the charity partnership. Owns the project files and dashboard.</p>
+      </div>
+      <div class="crew-card">
+        <div class="crew-avatar">B</div>
+        <h3>Bob Amerault</h3>
+        <div class="role">Co-Organizer</div>
+        <p>Helping rally the group and field interest. Tracks who's in, who's a maybe, who needs a nudge.</p>
+      </div>
+      <div class="crew-card">
+        <div class="crew-avatar">J</div>
+        <h3>Jim Brooks</h3>
+        <div class="role">Co-Organizer</div>
+        <p>Local connections, recruiting outreach, and on-site coordination during the weekend.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== CTA ============== -->
+<section id="interest" class="cta-section">
+  <div class="wrap">
+    <div class="cta-card">
+      <h2>Ready to come?</h2>
+      <p>Tell us you're in, ask a question, or pass the word to someone who'd want to play. We're hoping to lock the date within a few weeks of getting the quote back.</p>
+      <a class="btn btn-primary" href="mailto:fructifyme@gmail.com?subject=Lake%20Morey%202026%20-%20Count%20Me%20In&body=Hey%20Mike%20%E2%80%94%20I%27m%20in%20for%20the%20Lake%20Morey%20weekend%20fall%202026.%20Here%27s%20my%20info%3A%0A%0AName%3A%0APhone%3A%0AEmail%3A%0AAny%20date%20preference%20(W1%20Sep%2018%E2%80%9320%2C%20W2%20Sep%2025%E2%80%9327%2C%20W3%20Oct%202%E2%80%934%2C%20W4%20Oct%209%E2%80%9311)%3A%0ASingle%20or%20double%20room%3F%0AAny%20dietary%20notes%3A%0A%0ALet%20me%20know%20what%27s%20next.">Email Mike — Count Me In</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FOOTER ============== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand"><span style="color: var(--autumn-light);">⛳</span>Lake Morey 2026</div>
+        <p>A charity golf weekend at Lake Morey Resort, Fairlee, Vermont — fall 2026. Raising funds for the Melanoma Foundation of New England.</p>
+        <p style="margin-top: 12px; font-size: 12px; opacity: 0.7;">A private trip page. Not affiliated with Lake Morey Resort or MFNE — donations to MFNE go directly through their site.</p>
+      </div>
+      <div>
+        <h4>The Cause</h4>
+        <a href="https://www.mfne.org" target="_blank" rel="noopener">mfne.org</a>
+        <a href="https://www.mfne.org/about/" target="_blank" rel="noopener">About MFNE</a>
+      </div>
+      <div>
+        <h4>The Resort</h4>
+        <a href="https://www.lakemoreyresort.com/" target="_blank" rel="noopener">Lake Morey Resort</a>
+        <a href="https://www.lakemoreyresort.com/golf/golf-overview/" target="_blank" rel="noopener">The Course</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      © 2026 — Built by the planning crew. Last updated April 27, 2026.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Live countdown to Sep 25, 2026
+  function updateCountdown() {
+    const target = new Date('2026-09-25T08:00:00');
+    const now = new Date();
+    const days = Math.max(0, Math.ceil((target - now) / (1000 * 60 * 60 * 24)));
+    const el = document.getElementById('countdown');
+    if (el) el.textContent = days;
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 60 * 60 * 1000); // refresh hourly
+
+  // Animate raise bar on scroll-into-view
+  const fill = document.querySelector('.raise-fill');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting && fill) {
+        const pct = 0; // current %
+        fill.style.width = pct + '%';
+      }
+    });
+  }, { threshold: 0.4 });
+  if (fill) obs.observe(fill.parentElement.parentElement);
+</script>
+
+</body>
+</html>
