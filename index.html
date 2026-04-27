@@ -8,7 +8,7 @@
 
 <!-- Open Graph -->
 <meta property="og:title" content="Lake Morey 2026 — Annual Fall Golf Trip">
-<meta property="og:description" content="Three nights. Sixty-three holes. Back to Lake Morey.">
+<meta property="og:description" content="Two nights. Sixty-three holes. Back to Lake Morey.">
 <meta property="og:type" content="website">
 
 <!-- Fonts -->
@@ -290,6 +290,167 @@
   .format-list .day { font-weight: 600; color: var(--cream); }
   .format-list .what { color: rgba(254, 243, 199, 0.7); font-size: 14px; }
 
+  /* === OFFER === */
+  .offer { background: var(--paper); }
+  .offer-headline {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-top: 4px solid var(--autumn-light);
+    border-radius: 14px;
+    padding: 32px 36px;
+    margin-bottom: 24px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 28px;
+    align-items: center;
+    box-shadow: var(--shadow-sm);
+  }
+  @media (max-width: 720px) {
+    .offer-headline { grid-template-columns: 1fr; gap: 16px; padding: 24px; text-align: center; }
+  }
+  .offer-date {
+    text-align: center;
+    background: linear-gradient(135deg, var(--autumn) 0%, var(--autumn-light) 100%);
+    color: var(--white);
+    padding: 18px 28px;
+    border-radius: 12px;
+    min-width: 140px;
+    box-shadow: 0 4px 14px -2px rgba(234, 88, 12, 0.35);
+  }
+  .offer-date .month {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase;
+    opacity: 0.92;
+  }
+  .offer-date .day {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px; font-weight: 700; line-height: 1; margin: 4px 0 6px;
+  }
+  .offer-date .year { font-size: 12px; opacity: 0.85; letter-spacing: 0.12em; }
+  .offer-headline-text h3 { font-size: 24px; margin-bottom: 6px; }
+  .offer-headline-text p { color: var(--ink-soft); font-size: 15px; }
+
+  .offer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  @media (max-width: 880px) { .offer-grid { grid-template-columns: 1fr; } }
+  .offer-card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 24px 28px;
+  }
+  .offer-card h4 {
+    font-size: 18px;
+    margin-bottom: 14px;
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+    color: var(--forest-dark);
+  }
+  .offer-card .pill {
+    display: inline-block;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    background: var(--cream-2); color: var(--autumn);
+    padding: 4px 10px; border-radius: 100px;
+  }
+  .offer-card ul { list-style: none; padding: 0; }
+  .offer-card ul li {
+    padding: 9px 0;
+    border-bottom: 1px dashed var(--line);
+    display: flex; justify-content: space-between; gap: 12px;
+    font-size: 14px;
+  }
+  .offer-card ul li:last-child { border-bottom: none; }
+  .offer-card ul li span:first-child { color: var(--ink-soft); }
+  .offer-card ul li span:last-child { font-weight: 600; color: var(--forest-dark); text-align: right; }
+
+  .gap-row {
+    background: #fef3c7;
+    border: 1px solid #fde68a;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-top: 14px;
+    line-height: 1.55;
+  }
+  .gap-row strong { color: var(--autumn); }
+
+  .decisions-head { text-align: center; margin: 44px 0 24px; }
+  .decisions-head h3 { font-size: 28px; margin-bottom: 8px; }
+  .decisions-head p { color: var(--ink-soft); font-size: 15px; }
+
+  .decisions-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+  @media (max-width: 720px) { .decisions-grid { grid-template-columns: 1fr; } }
+  .decision {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--forest-light);
+    border-radius: 10px;
+    padding: 22px 24px;
+    transition: all .2s;
+  }
+  .decision:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+    border-left-color: var(--autumn-light);
+  }
+  .decision .num {
+    display: inline-block;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--autumn);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .decision h4 { font-size: 19px; margin-bottom: 8px; }
+  .decision p { font-size: 14px; color: var(--ink-soft); margin-bottom: 14px; }
+  .decision .reply {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--autumn);
+    background: var(--cream-2);
+    padding: 8px 14px;
+    border-radius: 100px;
+    transition: all .2s;
+  }
+  .decision .reply:hover {
+    background: var(--autumn-light);
+    color: var(--white);
+  }
+
+  /* Booked tag for Dates section */
+  .date-tag.booked {
+    background: var(--ink-soft);
+    color: var(--cream);
+  }
+  .date-card.booked { opacity: 0.55; }
+  .date-card.booked:hover { transform: none; box-shadow: none; border-color: var(--line); }
+
+  .dates-banner {
+    background: var(--cream-2);
+    border: 1px solid #fde68a;
+    border-left: 4px solid var(--autumn-light);
+    color: var(--ink);
+    padding: 16px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    margin-bottom: 28px;
+  }
+  .dates-banner strong { color: var(--autumn); }
+
   /* === DATES === */
   .dates-grid {
     display: grid;
@@ -550,7 +711,7 @@
     <div class="nav-brand"><span class="flag">⛳</span>Lake Morey 2026</div>
     <div class="nav-links">
       <a href="#about">The Trip</a>
-      <a href="#dates">Dates</a>
+      <a href="#offer">The Offer</a>
       <a href="#progress">Progress</a>
       <a href="#crew">Crew</a>
     </div>
@@ -561,13 +722,13 @@
 <header class="hero">
   <div class="hero-content">
     <span class="eyebrow"><span class="dot"></span> Annual Fall Golf Trip &nbsp;·&nbsp; 2026</span>
-    <h1>Three nights.<br>Sixty-three holes.<br>Back to <em>Lake Morey.</em></h1>
+    <h1>Two nights.<br>Sixty-three holes.<br>Back to <em>Lake Morey.</em></h1>
     <p class="hero-tagline">
       Our annual fall trip back to Lake Morey Resort in Fairlee, Vermont — a returning group of retired police, firefighters, EMS, and military veterans.
     </p>
     <div class="hero-meta">
       <span>📍 Lake Morey Resort, Fairlee, VT</span>
-      <span>📅 Sep 25 – 27, 2026 (target)</span>
+      <span>📅 Oct 16 – 18, 2026 (offered)</span>
       <span>🏌️ 16 – 32 golfers</span>
     </div>
     <div class="hero-cta">
@@ -583,7 +744,7 @@
     <div class="stat">
       <div class="stat-num" id="countdown">—</div>
       <div class="stat-label">Days to Tee Off</div>
-      <div class="stat-sub">Target: Sep 25, 2026</div>
+      <div class="stat-sub">Offered: Oct 16, 2026</div>
     </div>
     <div class="stat">
       <div class="stat-num">3</div>
@@ -591,9 +752,9 @@
       <div class="stat-sub">16 floor · 32 ceiling</div>
     </div>
     <div class="stat">
-      <div class="stat-num">✉️</div>
+      <div class="stat-num">✓</div>
       <div class="stat-label">Quote Status</div>
-      <div class="stat-sub">Form submitted · awaiting reply</div>
+      <div class="stat-sub">Received · group input needed</div>
     </div>
     <div class="stat">
       <div class="stat-num">63</div>
@@ -653,17 +814,146 @@
   </div>
 </section>
 
+<!-- ============== OFFER ============== -->
+<section id="offer" class="offer">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-eyebrow">The Quote · Decisions Needed</div>
+      <h2>Lake Morey responded.</h2>
+      <p>Shanna Danis (Golf Sales Manager) replied April 27. Here's what's on the table — and what we three need to weigh in on before getting back to her.</p>
+    </div>
+
+    <div class="offer-headline">
+      <div class="offer-date">
+        <div class="month">Oct</div>
+        <div class="day">16–18</div>
+        <div class="year">2026</div>
+      </div>
+      <div class="offer-headline-text">
+        <h3>Friday – Sunday — the only weekend they have.</h3>
+        <p>Their busiest stretch of the year is fully booked. Oct 16–18 is the one weekend that can fit our group. About a week past our original window, but still solidly fall in the Connecticut River Valley.</p>
+      </div>
+    </div>
+
+    <div class="offer-grid">
+      <div class="offer-card">
+        <h4>What's included <span class="pill">Bundled</span></h4>
+        <ul>
+          <li><span>Lodging</span><span>2 nights (Fri + Sat)</span></li>
+          <li><span>Dinners</span><span>Friday + Saturday</span></li>
+          <li><span>Breakfasts</span><span>Saturday + Sunday</span></li>
+          <li><span>Greens fees</span><span>Unlimited Fri / Sat / Sun</span></li>
+          <li><span>VT tax (9%)</span><span>Included</span></li>
+        </ul>
+        <div class="gap-row"><strong>Not included:</strong> golf cart fees ($28/person/18 holes, $32/person all-day, $20/person/9 holes).</div>
+      </div>
+
+      <div class="offer-card">
+        <h4>Per-golfer cost <span class="pill">Double occupancy</span></h4>
+        <ul>
+          <li><span>Stay + meals + golf</span><span>$592.96</span></li>
+          <li><span>Carts (18-hole × 3 days)</span><span>+ $84.00</span></li>
+          <li><span>All-in (≤16 golfers)</span><span><strong style="color: var(--autumn);">$676.96</strong></span></li>
+          <li><span>All-in (17+, Sun 9 holes)</span><span><strong style="color: var(--autumn);">$648.96</strong></span></li>
+          <li><span>Single supplement</span><span>+ ~$218</span></li>
+        </ul>
+        <div class="gap-row"><strong>Group totals (≤16 golfers, double occ):</strong> 16 ≈ $10.8K · 24 ≈ $16.2K · 32 ≈ $21.7K</div>
+      </div>
+    </div>
+
+    <div class="offer-card" style="margin-bottom: 24px;">
+      <h4>The Sunday wrinkle <span class="pill" style="background: #fed7aa; color: var(--autumn);">Important</span></h4>
+      <ul>
+        <li><span>Sunday 18 holes (7:00 – 7:27 AM)</span><span>Capped at 16 players</span></li>
+        <li><span>Sunday 9 holes (8:00 – 9:00 AM)</span><span>Open to all — cart fees waived</span></li>
+      </ul>
+      <div class="gap-row">A scheduled tournament limits the Sunday window. If we go above 16 golfers, Sunday becomes 9 holes — Lake Morey will waive cart fees that day as the concession.</div>
+    </div>
+
+    <div class="sec-head" style="margin: 16px auto 24px;">
+      <div class="sec-eyebrow">What that weekend usually looks like</div>
+      <h2 style="font-size: clamp(26px, 4vw, 36px);">Climate norms, not a forecast.</h2>
+      <p>For your gut-check on Oct 16–18. These are typical-year weather and foliage references for Fairlee / Upper Connecticut River Valley — not a forecast (way too early). Use to set expectations and pack lists, not to make weather promises.</p>
+    </div>
+
+    <div class="offer-grid">
+      <div class="offer-card">
+        <h4>Typical mid-October weather <span class="pill">Climate normals</span></h4>
+        <ul>
+          <li><span>Average high</span><span>~54°F (12°C)</span></li>
+          <li><span>Average low</span><span>~40°F (4°C)</span></li>
+          <li><span>Overnight frost risk</span><span>Real — Sunday 7 AM exposure</span></li>
+          <li><span>October monthly rainfall</span><span>~3.1" (wettest month of year)</span></li>
+          <li><span>Days w/ measurable precip</span><span>~14 of 31 in October</span></li>
+        </ul>
+        <div class="gap-row"><strong>Translation:</strong> bring a layer and a rain shell. Cool and crisp days, cold mornings. Real frost-delay potential on the Sunday early window — worth asking Shanna about their frost-delay protocol before locking it.</div>
+      </div>
+
+      <div class="offer-card">
+        <h4>Typical mid-October foliage <span class="pill">CT River Valley</span></h4>
+        <ul>
+          <li><span>Vermont overall</span><span>At peak or just past</span></li>
+          <li><span>Upper CT River Valley (Fairlee)</span><span>Sugar maples turning fast; some leaf drop</span></li>
+          <li><span>Lower CT River Valley</span><span>Bright reds — red maple holding</span></li>
+          <li><span>Best color in this region</span><span>~Oct 5 – 15 typical</span></li>
+          <li><span>Oct 16 – 18 status</span><span>Late peak / early drop</span></li>
+        </ul>
+        <div class="gap-row"><strong>Translation:</strong> we're catching the back end of peak in our specific spot. Less postcard than the first weekend of October, but still solidly colorful — bright maples mixed with some bare branches. Year-to-year variation is real.</div>
+      </div>
+    </div>
+
+    <div class="decisions-head">
+      <h3>Bob, Jim — your take?</h3>
+      <p>Four open calls before we reply to Shanna. Click "Your take →" to email Mike.</p>
+    </div>
+
+    <div class="decisions-grid">
+      <div class="decision">
+        <div class="num">Decision 01</div>
+        <h4>Accept Oct 16 – 18?</h4>
+        <p>Only weekend they have. About a week past our original target window. Otherwise a clean fit on length, format, and price tier.</p>
+        <a class="reply" href="mailto:fructifyme@gmail.com?subject=Lake%20Morey%20-%20Decision%201%20-%20Oct%2016-18&body=My%20take%20on%20accepting%20Oct%2016%E2%80%9318%3A%0A%0A">Your take →</a>
+      </div>
+
+      <div class="decision">
+        <div class="num">Decision 02</div>
+        <h4>Roster cap or open it up?</h4>
+        <p>Cap at 16 to keep the full Sunday 18-hole format — or open to 17–32 and accept Sunday 9 holes (with cart fees waived) due to the Sunday tournament conflict.</p>
+        <a class="reply" href="mailto:fructifyme@gmail.com?subject=Lake%20Morey%20-%20Decision%202%20-%20Roster%20Size&body=My%20take%20on%20roster%20size%20vs.%20Sunday%20format%3A%0A%0A">Your take →</a>
+      </div>
+
+      <div class="decision">
+        <div class="num">Decision 03</div>
+        <h4>Push for cart-fee waiver?</h4>
+        <p>Worth one ask using our group identity (retired fire / police / EMS / vets) for Friday or Saturday cart-fee courtesy. Sunday 9-hole carts are already waived.</p>
+        <a class="reply" href="mailto:fructifyme@gmail.com?subject=Lake%20Morey%20-%20Decision%203%20-%20Cart%20Fees&body=My%20take%20on%20pushing%20for%20cart-fee%20waiver%3A%0A%0A">Your take →</a>
+      </div>
+
+      <div class="decision">
+        <div class="num">Decision 04</div>
+        <h4>Tee-time preference Fri & Sat?</h4>
+        <p>Shanna asked us to propose. Shotgun start? Specific window? Earlier or later? Same question for Friday's 9 holes.</p>
+        <a class="reply" href="mailto:fructifyme@gmail.com?subject=Lake%20Morey%20-%20Decision%204%20-%20Tee%20Times&body=My%20take%20on%20preferred%20tee%20times%20Fri%20%26%20Sat%3A%0A%0A">Your take →</a>
+      </div>
+    </div>
+
+    <div class="dates-note" style="margin-top: 32px;">Still unanswered from Shanna: deposit / balance / cancellation terms · single-occupancy total · frost-delay protocol · meal format / dietary options.</div>
+  </div>
+</section>
+
 <!-- ============== DATES ============== -->
 <section id="dates">
   <div class="wrap">
     <div class="sec-head">
-      <div class="sec-eyebrow">Date Finalists</div>
-      <h2>Four candidate weekends.</h2>
-      <p>Mid-September to second week of October. Each weekend has its own tradeoff between price, foliage, and weather. Our recommended target is Sep 25–27, with Oct 2–4 as the foliage-premium alternate.</p>
+      <div class="sec-eyebrow">Originally Targeted</div>
+      <h2>Our original four weekends — all booked.</h2>
+      <p>For context. We went in with these four candidate weekends in mind. Lake Morey is full on every one of them. The only weekend they could fit us is Oct 16–18 — see <a href="#offer">The Offer</a> above.</p>
     </div>
+    <div class="dates-banner"><strong>Update — April 27, 2026:</strong> Shanna confirmed Lake Morey is fully booked across all four of our originally-targeted weekends. These cards are kept for reference only. The only date on the table is <strong>Oct 16–18, 2026</strong>.</div>
     <div class="dates-grid">
       <!-- W1 -->
-      <div class="date-card">
+      <div class="date-card booked">
+        <div class="date-tag booked">Booked</div>
         <div class="date-week">Weekend 1</div>
         <h3>Sep 18 – 20</h3>
         <div class="date-meta">Late summer • Lowest demand</div>
@@ -672,9 +962,9 @@
         <div class="date-row"><span>Pricing</span><span>Lowest</span></div>
         <div class="date-row"><span>Vibe</span><span>Warm & calm</span></div>
       </div>
-      <!-- W2 RECOMMENDED -->
-      <div class="date-card recommended">
-        <div class="date-tag">Recommended</div>
+      <!-- W2 -->
+      <div class="date-card booked">
+        <div class="date-tag booked">Booked</div>
         <div class="date-week">Weekend 2</div>
         <h3>Sep 25 – 27</h3>
         <div class="date-meta">Early color • Best balance</div>
@@ -684,7 +974,8 @@
         <div class="date-row"><span>Vibe</span><span>Sweet spot</span></div>
       </div>
       <!-- W3 -->
-      <div class="date-card">
+      <div class="date-card booked">
+        <div class="date-tag booked">Booked</div>
         <div class="date-week">Weekend 3</div>
         <h3>Oct 2 – 4</h3>
         <div class="date-meta">Peak foliage • Books first</div>
@@ -694,7 +985,8 @@
         <div class="date-row"><span>Vibe</span><span>Postcard fall</span></div>
       </div>
       <!-- W4 -->
-      <div class="date-card">
+      <div class="date-card booked">
+        <div class="date-tag booked">Booked</div>
         <div class="date-week">Weekend 4</div>
         <h3>Oct 9 – 11</h3>
         <div class="date-meta">Past peak • Frost risk</div>
@@ -704,7 +996,7 @@
         <div class="date-row"><span>Vibe</span><span>Late & cold</span></div>
       </div>
     </div>
-    <div class="dates-note">Friday – Sunday is the focus. Other days of the week are on the table only if it meaningfully helps pricing.</div>
+    <div class="dates-note">All four were fully booked when we inquired. Our actual date — assuming we accept — is <a href="#offer"><strong>Oct 16–18</strong></a>.</div>
   </div>
 </section>
 
@@ -726,7 +1018,7 @@
       <div class="step current">
         <div class="step-circle">2</div>
         <div class="step-name">Quote &amp; Group</div>
-        <div class="step-sub">Quote sent — recruiting</div>
+        <div class="step-sub">Quote received — input needed</div>
       </div>
       <div class="step">
         <div class="step-circle">3</div>
@@ -748,18 +1040,17 @@
     <div class="progress-detail">
       <h3>What's happening right now</h3>
       <div class="what-now">
-        <strong>Group inquiry form submitted to Lake Morey</strong> on April 27, 2026 — covering our 16–32 group, Fri–Sun format, four candidate weekends, and asks about hero / AARP / AAA / senior / returning-group rates. Auto-confirmation received: their <strong>Director of Golf — Chris Daly, PGA</strong> — will be in touch. Next: phone follow-up to (800) 423-1211, ask for Chris by name, get his direct email, then send the full briefing.
+        <strong>Quote received from Shanna Danis</strong> (Lake Morey Golf Sales Manager) on April 27, 2026. Original four target weekends are all booked. The one weekend they can host us is <strong>Oct 16–18</strong> — Fri+Sat lodging, all meals, unlimited golf, double-occ at $592.96/golfer + $84 cart fees. Sunday format depends on roster size (see <a href="#offer">The Offer</a>). <strong>Bob &amp; Jim — please weigh in on the four decisions in The Offer section above.</strong>
       </div>
       <ul class="checklist">
         <li class="done">Project parameters locked (group size 16–32, format, dates window)</li>
         <li class="done">Lake Morey research complete — pricing structure documented</li>
-        <li class="done">Date analysis done — Sep 25–27 recommended, Oct 2–4 alternate</li>
+        <li class="done">Date analysis done — original weekends targeted</li>
         <li class="done">Outreach drafted with hero/AARP/AAA discount asks</li>
         <li class="done">Lake Morey group inquiry form submitted (April 27, 2026)</li>
-        <li>Phone follow-up to (800) 423-1211 — ask for Chris Daly (Director of Golf), get his direct email</li>
-        <li>Send full briefing to Chris Daly's direct email</li>
-        <li>Receive and review quote — populate package comparison</li>
-        <li>Pick finalist date(s) — vote with the group</li>
+        <li class="done">Quote received from Shanna Danis — Oct 16–18 is the only weekend offered</li>
+        <li>Bob &amp; Jim weigh in on the four open decisions (date / roster / cart fees / tee times)</li>
+        <li>Reply to Shanna with our answers + remaining questions (deposit terms, frost-delay, single rate, meal format)</li>
         <li>Confirm 16+ golfer roster</li>
         <li>Submit deposit and lock the trip</li>
       </ul>
@@ -815,50 +1106,4 @@
   <div class="wrap">
     <div class="cta-card">
       <h2>Ready to come?</h2>
-      <p>Tell us you're in, ask a question, or pass the word to someone who'd want to play. We're hoping to lock the date within a few weeks of getting the quote back.</p>
-      <a class="btn btn-primary" href="mailto:fructifyme@gmail.com?subject=Lake%20Morey%202026%20-%20Count%20Me%20In&body=Hey%20Mike%20%E2%80%94%20I%27m%20in%20for%20the%20Lake%20Morey%20weekend%20fall%202026.%20Here%27s%20my%20info%3A%0A%0AName%3A%0APhone%3A%0AEmail%3A%0AAny%20date%20preference%20(W1%20Sep%2018%E2%80%9320%2C%20W2%20Sep%2025%E2%80%9327%2C%20W3%20Oct%202%E2%80%934%2C%20W4%20Oct%209%E2%80%9311)%3A%0ASingle%20or%20double%20room%3F%0AAny%20dietary%20notes%3A%0A%0ALet%20me%20know%20what%27s%20next.">Email Mike — Count Me In</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============== FOOTER ============== -->
-<footer>
-  <div class="wrap">
-    <div class="foot-grid">
-      <div>
-        <div class="foot-brand"><span style="color: var(--autumn-light);">⛳</span>Lake Morey 2026</div>
-        <p>Our annual fall golf trip back to Lake Morey Resort in Fairlee, Vermont. A returning group of retired police, fire, EMS, and military veterans.</p>
-        <p style="margin-top: 12px; font-size: 12px; opacity: 0.7;">A private trip page. Not affiliated with Lake Morey Resort.</p>
-      </div>
-      <div>
-        <h4>The Resort</h4>
-        <a href="https://www.lakemoreyresort.com/" target="_blank" rel="noopener">Lake Morey Resort</a>
-        <a href="https://www.lakemoreyresort.com/golf/golf-overview/" target="_blank" rel="noopener">The Course</a>
-      </div>
-      <div>
-        <h4>Mentioned</h4>
-        <a href="https://www.mfne.org" target="_blank" rel="noopener">Melanoma Foundation of New England</a>
-      </div>
-    </div>
-    <div class="foot-bottom">
-      © 2026 — Built by the planning crew. Last updated April 27, 2026.
-    </div>
-  </div>
-</footer>
-
-<script>
-  // Live countdown to Sep 25, 2026
-  function updateCountdown() {
-    const target = new Date('2026-09-25T08:00:00');
-    const now = new Date();
-    const days = Math.max(0, Math.ceil((target - now) / (1000 * 60 * 60 * 24)));
-    const el = document.getElementById('countdown');
-    if (el) el.textContent = days;
-  }
-  updateCountdown();
-  setInterval(updateCountdown, 60 * 60 * 1000); // refresh hourly
-</script>
-
-</body>
-</html>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+      <p>Tell us you're in, ask a question, or p
