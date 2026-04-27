@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lake Morey 2026 — A Charity Golf Weekend for Melanoma Foundation of New England</title>
-<meta name="description" content="A fall 2026 charity golf weekend at Lake Morey Resort in Fairlee, Vermont — retired police, fire, EMS, and veterans raising funds for the Melanoma Foundation of New England.">
+<title>Lake Morey 2026 — Annual Fall Golf Trip</title>
+<meta name="description" content="An annual fall golf weekend at Lake Morey Resort in Fairlee, Vermont. A returning group of retired police, fire, EMS, and military veterans, mid-September to early October.">
 
 <!-- Open Graph -->
-<meta property="og:title" content="Lake Morey 2026 — Charity Golf Weekend">
-<meta property="og:description" content="Three nights, 63 holes, fall foliage in Vermont. Raising funds for the Melanoma Foundation of New England.">
+<meta property="og:title" content="Lake Morey 2026 — Annual Fall Golf Trip">
+<meta property="og:description" content="Three nights. Sixty-three holes. Back to Lake Morey.">
 <meta property="og:type" content="website">
 
 <!-- Fonts -->
@@ -329,6 +329,11 @@
   .date-row:not(:last-child) { border-bottom: 1px dashed var(--line); }
   .date-row span:first-child { color: var(--ink-soft); }
   .date-row span:last-child { font-weight: 600; color: var(--forest-dark); }
+  .dates-note {
+    text-align: center; margin-top: 32px;
+    font-size: 14px; color: var(--ink-soft);
+    font-style: italic;
+  }
 
   /* === PROGRESS === */
   .progress { background: var(--cream); }
@@ -403,79 +408,6 @@
   .checklist li.done { color: var(--forest-dark); text-decoration: line-through; opacity: 0.6; }
   .checklist li.done::before { content: '● '; }
 
-  /* === CHARITY === */
-  .charity {
-    background: linear-gradient(135deg, var(--forest-dark) 0%, #14532d 100%);
-    color: var(--cream);
-    position: relative;
-    overflow: hidden;
-  }
-  .charity::before {
-    content: '';
-    position: absolute; inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cpath fill='none' stroke='%23fef3c7' stroke-width='0.4' opacity='0.06' d='M100 0 L100 200 M0 100 L200 100 M50 50 L150 150 M150 50 L50 150'/%3E%3Ccircle cx='100' cy='100' r='80' fill='none' stroke='%23fef3c7' stroke-width='0.4' opacity='0.06'/%3E%3C/svg%3E");
-  }
-  .charity .sec-head h2 { color: var(--cream); }
-  .charity .sec-eyebrow { color: var(--autumn-light); }
-  .charity .sec-head p { color: rgba(254, 243, 199, 0.78); }
-  .charity-content { position: relative; z-index: 1; }
-  .charity-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 56px;
-    align-items: center;
-  }
-  @media (max-width: 880px) { .charity-grid { grid-template-columns: 1fr; gap: 32px; } }
-  .charity-text p {
-    color: rgba(254, 243, 199, 0.85);
-    font-size: 17px;
-    margin-bottom: 18px;
-  }
-  .charity-text strong { color: var(--cream); }
-  .charity-progress {
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(254, 243, 199, 0.16);
-    border-radius: 16px;
-    padding: 36px;
-    backdrop-filter: blur(8px);
-  }
-  .charity-progress h3 { color: var(--cream); font-size: 22px; margin-bottom: 8px; }
-  .raise-amount {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 56px; font-weight: 700;
-    color: var(--autumn-light);
-    line-height: 1;
-    margin: 16px 0 4px;
-  }
-  .raise-goal { color: rgba(254, 243, 199, 0.6); font-size: 14px; }
-  .raise-bar {
-    height: 12px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 100px;
-    margin: 24px 0 12px;
-    overflow: hidden;
-  }
-  .raise-fill {
-    height: 100%;
-    background: linear-gradient(90deg, var(--autumn) 0%, var(--gold) 100%);
-    border-radius: 100px;
-    transition: width 1.5s ease;
-  }
-  .charity-asks {
-    list-style: none; margin-top: 24px;
-  }
-  .charity-asks li {
-    padding: 10px 0;
-    color: rgba(254, 243, 199, 0.85);
-    font-size: 14px;
-    border-bottom: 1px solid rgba(254, 243, 199, 0.08);
-  }
-  .charity-asks li::before {
-    content: '✦ ';
-    color: var(--autumn-light);
-    margin-right: 6px;
-  }
-
   /* === CREW === */
   .crew { background: var(--paper); }
   .crew-grid {
@@ -511,6 +443,35 @@
     margin-bottom: 14px;
   }
   .crew-card p { font-size: 14px; color: var(--ink-soft); }
+
+  /* === SIDECAR (charity, demoted) === */
+  .sidecar { background: var(--cream); }
+  .sidecar-card {
+    max-width: 760px; margin: 0 auto;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--gold);
+    border-radius: 12px;
+    padding: 32px 36px;
+  }
+  .sidecar-card h3 {
+    font-size: 22px; margin-bottom: 12px;
+  }
+  .sidecar-card p {
+    color: var(--ink-soft);
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+  .sidecar-tag {
+    display: inline-block;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--autumn);
+    background: var(--cream-2);
+    padding: 4px 10px;
+    border-radius: 100px;
+    margin-bottom: 12px;
+  }
 
   /* === CTA === */
   .cta-section {
@@ -591,7 +552,6 @@
       <a href="#about">The Trip</a>
       <a href="#dates">Dates</a>
       <a href="#progress">Progress</a>
-      <a href="#charity">Charity</a>
       <a href="#crew">Crew</a>
     </div>
   </div>
@@ -600,15 +560,15 @@
 <!-- ============== HERO ============== -->
 <header class="hero">
   <div class="hero-content">
-    <span class="eyebrow"><span class="dot"></span> A Charity Golf Weekend &nbsp;·&nbsp; Fall 2026</span>
-    <h1>Three nights.<br>Sixty-three holes.<br>One <em>good cause.</em></h1>
+    <span class="eyebrow"><span class="dot"></span> Annual Fall Golf Trip &nbsp;·&nbsp; 2026</span>
+    <h1>Three nights.<br>Sixty-three holes.<br>Back to <em>Lake Morey.</em></h1>
     <p class="hero-tagline">
-      A weekend at Lake Morey Resort in Fairlee, Vermont — for retired police, firefighters, EMS, and military veterans — raising funds for the Melanoma Foundation of New England.
+      Our annual fall trip back to Lake Morey Resort in Fairlee, Vermont — a returning group of retired police, firefighters, EMS, and military veterans.
     </p>
     <div class="hero-meta">
       <span>📍 Lake Morey Resort, Fairlee, VT</span>
       <span>📅 Sep 25 – 27, 2026 (target)</span>
-      <span>🏌️ 12–16 golfers</span>
+      <span>🏌️ 16 – 32 golfers</span>
     </div>
     <div class="hero-cta">
       <a href="#interest" class="btn btn-primary">Count Me In →</a>
@@ -626,19 +586,19 @@
       <div class="stat-sub">Target: Sep 25, 2026</div>
     </div>
     <div class="stat">
-      <div class="stat-num">3 / 16</div>
+      <div class="stat-num">3</div>
       <div class="stat-label">Golfers Committed</div>
-      <div class="stat-sub">Mike, Bob, Jim — and counting</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">$0</div>
-      <div class="stat-label">Raised for MFNE</div>
-      <div class="stat-sub">Goal: $5,000</div>
+      <div class="stat-sub">16 floor · 32 ceiling</div>
     </div>
     <div class="stat">
       <div class="stat-num">⏳</div>
       <div class="stat-label">Quote Status</div>
       <div class="stat-sub">Inquiry sent to Lake Morey</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">63</div>
+      <div class="stat-label">Holes</div>
+      <div class="stat-sub">+ 2 dinners + 2 breakfasts</div>
     </div>
   </div>
 </section>
@@ -649,13 +609,13 @@
     <div class="sec-head">
       <div class="sec-eyebrow">The Trip</div>
       <h2>A weekend that's worth the drive.</h2>
-      <p>This isn't a brand-new idea. We've done this trip before. The format works. What's new this year is the cause we're playing for.</p>
+      <p>This isn't a brand-new idea. We've done this trip before. The format works.</p>
     </div>
     <div class="about-grid">
       <div class="about-prose">
         <p>Lake Morey is a third-generation family-owned resort in Vermont's Connecticut River Upper Valley — easy I-91 access, a championship 18-hole course with a flat front nine and a mountainous back, lake views, and the kind of fall foliage you write home about.</p>
         <p>Our group is mostly <strong>retired firefighters, with police, EMS, and veterans rounding it out</strong> — most of us in our 50s and 60s, all of us still chasing a little white ball around. We come up Friday afternoon, play a quick nine, sleep, play 36 on Saturday, sleep, play 18 Sunday, then drive home tired and happy.</p>
-        <p>This year we're tying the trip to a <strong>fundraiser for the Melanoma Foundation of New England</strong>. The cause hits close to home — outdoor service members and firefighters carry elevated cancer risk, and our age cohort sees plenty of skin-cancer scares. Plus, it's a New England organization for a New England trip. That just feels right.</p>
+        <p>The window we're targeting is <strong>mid-September to the second week of October</strong>. We're focused on Friday – Sunday but open to other days if it helps with pricing or availability.</p>
         <div class="badges">
           <span class="badge">🚒 Retired Fire</span>
           <span class="badge">👮 Retired Police</span>
@@ -744,6 +704,7 @@
         <div class="date-row"><span>Vibe</span><span>Late & cold</span></div>
       </div>
     </div>
+    <div class="dates-note">Friday – Sunday is the focus. Other days of the week are on the table only if it meaningfully helps pricing.</div>
   </div>
 </section>
 
@@ -787,55 +748,19 @@
     <div class="progress-detail">
       <h3>What's happening right now</h3>
       <div class="what-now">
-        <strong>Quote inquiry sent to Lake Morey</strong> on April 27, 2026 — including our format, date finalists, group identity (police/fire/EMS/vets), and a charity-partnership ask for MFNE. Expecting a reply within 5–7 business days.
+        <strong>Quote inquiry sent to Lake Morey</strong> on April 27, 2026 — including our format, date finalists, group identity (police/fire/EMS/vets), and asks about applicable hero/AARP/AAA/senior/returning-group rates. Expecting a reply within 5–7 business days.
       </div>
       <ul class="checklist">
-        <li class="done">Project parameters locked (group size, format, dates window)</li>
+        <li class="done">Project parameters locked (group size 16–32, format, dates window)</li>
         <li class="done">Lake Morey research complete — pricing structure documented</li>
         <li class="done">Date analysis done — Sep 25–27 recommended, Oct 2–4 alternate</li>
-        <li class="done">Charity locked — Melanoma Foundation of New England</li>
-        <li class="done">Outreach drafted with hero/AARP/AAA discount asks + charity partnership angle</li>
+        <li class="done">Outreach drafted with hero/AARP/AAA discount asks</li>
         <li>Send quote inquiry to Lake Morey group sales</li>
         <li>Receive and review quote — populate package comparison</li>
         <li>Pick finalist date(s) — vote with the group</li>
-        <li>Confirm 12–16 golfer roster</li>
+        <li>Confirm 16+ golfer roster</li>
         <li>Submit deposit and lock the trip</li>
       </ul>
-    </div>
-  </div>
-</section>
-
-<!-- ============== CHARITY ============== -->
-<section id="charity" class="charity">
-  <div class="charity-content wrap">
-    <div class="sec-head">
-      <div class="sec-eyebrow">The Cause</div>
-      <h2>Playing for a reason.</h2>
-      <p>Every dollar raised goes to the Melanoma Foundation of New England.</p>
-    </div>
-    <div class="charity-grid">
-      <div class="charity-text">
-        <p><strong>Why melanoma. Why MFNE.</strong></p>
-        <p>Outdoor service members and firefighters live with elevated cancer risk. Years on a fire line, in a cruiser, on a rig, in a uniform — sun exposure, smoke exposure, the works. Our age cohort knows somebody, often a few somebodies, who's been through it.</p>
-        <p>The <strong>Melanoma Foundation of New England</strong> is a regional non-profit (501(c)(3)) focused on prevention, education, and support across New England — the same six states most of us call home. They run the &ldquo;Practice Safe Skin&rdquo; program, fund research, and support patients and families through treatment.</p>
-        <p>Our goal for this trip: <strong>raise $5,000</strong>. With 16 golfers committing $250 each (or 20 at $250, or fewer at more) — totally doable. Add a side game with proceeds to the cause. Add a Lake Morey match if we can negotiate one. Add anyone outside the group who wants to chip in via the dashboard.</p>
-        <p style="margin-top: 24px;"><a href="https://www.mfne.org" target="_blank" rel="noopener" style="color: var(--autumn-light); font-weight: 600;">Learn more about MFNE →</a></p>
-      </div>
-      <div class="charity-progress">
-        <h3>Trip raise tracker</h3>
-        <p style="color: rgba(254, 243, 199, 0.7); font-size: 14px;">Live count of what we've raised so far</p>
-        <div class="raise-amount">$0</div>
-        <div class="raise-goal">of $5,000 goal</div>
-        <div class="raise-bar"><div class="raise-fill" style="width: 0%;"></div></div>
-        <div style="font-size: 13px; color: rgba(254, 243, 199, 0.6);">0% to goal</div>
-        <ul class="charity-asks" style="margin-top: 28px;">
-          <li>Per-golfer pledge above the trip cost ($250+ suggested)</li>
-          <li>Saturday side games with proceeds to MFNE</li>
-          <li>Outside donations (family, friends, network)</li>
-          <li>Resort partner match (in negotiation)</li>
-          <li>Closest-to-the-pin / longest-drive contests</li>
-        </ul>
-      </div>
     </div>
   </div>
 </section>
@@ -853,7 +778,7 @@
         <div class="crew-avatar">M</div>
         <h3>Mike</h3>
         <div class="role">Trip Lead · Outreach</div>
-        <p>Running point on Lake Morey, quote, and the charity partnership. Owns the project files and dashboard.</p>
+        <p>Running point on Lake Morey, the quote, and the dashboard. Owns the project files.</p>
       </div>
       <div class="crew-card">
         <div class="crew-avatar">B</div>
@@ -867,6 +792,18 @@
         <div class="role">Co-Organizer</div>
         <p>Local connections, recruiting outreach, and on-site coordination during the weekend.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== SIDECAR (optional charity) ============== -->
+<section class="sidecar">
+  <div class="wrap">
+    <div class="sidecar-card">
+      <span class="sidecar-tag">Optional sidecar</span>
+      <h3>A cause that's been talked about.</h3>
+      <p>Some of us have talked about supporting the <a href="https://www.mfne.org" target="_blank" rel="noopener"><strong>Melanoma Foundation of New England</strong></a> — a regional non-profit doing prevention, education, and patient support across the six New England states. The cause makes sense given outdoor service members and our age cohort.</p>
+      <p>Nothing locked. No goal. No commitment. If we go that direction, details will live here. Either way, MFNE does good work.</p>
     </div>
   </div>
 </section>
@@ -888,18 +825,17 @@
     <div class="foot-grid">
       <div>
         <div class="foot-brand"><span style="color: var(--autumn-light);">⛳</span>Lake Morey 2026</div>
-        <p>A charity golf weekend at Lake Morey Resort, Fairlee, Vermont — fall 2026. Raising funds for the Melanoma Foundation of New England.</p>
-        <p style="margin-top: 12px; font-size: 12px; opacity: 0.7;">A private trip page. Not affiliated with Lake Morey Resort or MFNE — donations to MFNE go directly through their site.</p>
-      </div>
-      <div>
-        <h4>The Cause</h4>
-        <a href="https://www.mfne.org" target="_blank" rel="noopener">mfne.org</a>
-        <a href="https://www.mfne.org/about/" target="_blank" rel="noopener">About MFNE</a>
+        <p>Our annual fall golf trip back to Lake Morey Resort in Fairlee, Vermont. A returning group of retired police, fire, EMS, and military veterans.</p>
+        <p style="margin-top: 12px; font-size: 12px; opacity: 0.7;">A private trip page. Not affiliated with Lake Morey Resort.</p>
       </div>
       <div>
         <h4>The Resort</h4>
         <a href="https://www.lakemoreyresort.com/" target="_blank" rel="noopener">Lake Morey Resort</a>
         <a href="https://www.lakemoreyresort.com/golf/golf-overview/" target="_blank" rel="noopener">The Course</a>
+      </div>
+      <div>
+        <h4>Mentioned</h4>
+        <a href="https://www.mfne.org" target="_blank" rel="noopener">Melanoma Foundation of New England</a>
       </div>
     </div>
     <div class="foot-bottom">
@@ -919,19 +855,8 @@
   }
   updateCountdown();
   setInterval(updateCountdown, 60 * 60 * 1000); // refresh hourly
-
-  // Animate raise bar on scroll-into-view
-  const fill = document.querySelector('.raise-fill');
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting && fill) {
-        const pct = 0; // current %
-        fill.style.width = pct + '%';
-      }
-    });
-  }, { threshold: 0.4 });
-  if (fill) obs.observe(fill.parentElement.parentElement);
 </script>
 
 </body>
 </html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
